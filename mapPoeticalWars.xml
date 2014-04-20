@@ -32,13 +32,13 @@
 <!-- Moonrise Monument -->
 <destroyables name="East Monument" materials="beacon;quartz_block;step:5;step:7;quartz_stairs;iron_block" completion="100%">
     <destroyable owner="Moonrise">
-       <cuboid min="151,50,-682" max="151,51,-682"/>
+       <cuboid min="152,52,-682" max="156,56,-686"/>
     </destroyable>
 </destroyables>
 
 <destroyables name="West Monument" materials="beacon;quartz_block;step:5;step:7;quartz_stairs;iron_block" completion="100%">
     <destroyable owner="Moonrise">	
-	   <cuboid min="152,50,-637" max="152,51,-637"/>
+	   <cuboid min="156,52,-640" max="152,56,-636"/>
     </destroyable>
 </destroyables>
 
@@ -53,6 +53,21 @@
         <!-- JumpPad 2 -->
         <apply velocity="@0.2,8.0,0">
             <cuboid min="117,72,-650" max="119,73,-652"/>
+        </apply>
+
+        <!-- Spawn Moonrise -->
+        <apply enter="only-moonrise" message="It's not your Spawn !">
+            <rectangle min="146,-650" max="186,-672" />
+        </apply>
+
+        <!-- Spawn Sunshine -->
+        <apply enter="only-sunshine" message="It's not your Spawn !">
+            <rectangle min="52,-650" max="92,-672" />
+        </apply>
+
+        <apply block="deny-all" >
+            <rectangle min="52,-650" max="92,-672" />
+            <rectangle min="146,-650" max="186,-672" />
         </apply>
 </regions>
 
