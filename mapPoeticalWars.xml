@@ -1,186 +1,218 @@
 <?xml version="1.0"?>
 <map proto="1.3.2">
-<name>Poetical War</name> 
-<version>1.2</version>
-<objective>Destroy enemies monuments.</objective>
+    <name>Poetical War</name> 
+    <version>1.2</version>
+    <objective>Destroy enemies monuments.</objective>
 
-<authors>
-    <author>Guicotsch</author>
-    <author contribution="World Edit Helper.">golutol</author>
-	<author contribution="Designing islands.">bl0up</author>
-</authors>
+    <authors>
+        <author>Guicotsch</author>
+        <author contribution="XML Contributor">Alan736</author>
+        <author contribution="World Edit Helper">golutol</author>
+    	<author contribution="Designing islands">bl0up</author>
+    </authors>
 
-<contributors>
-    <contributor contribution="XML and packaging helper.">WombatREJ</contributor>
-</contributors>
+    <contributors>
+        <contributor contribution="XML and packaging helper.">WombatREJ</contributor>
+    </contributors>
 
-<!-- Currently Broken -->
+    <!-- MONUMENTS -->
 
-<!-- Sunshine Monuments -->
-<destroyables name="East Monument" materials="beacon;quartz_block;step:5;step:7;quartz_stairs;iron_block" completion="100%">
-    <destroyable owner="Sunshine">
-       <cuboid min="82,52,-640" max="86,56,-636"/>
-    </destroyable>
-</destroyables>
+    <destroyables name="East Monument" materials="beacon;quartz_block;step:5;step:7;quartz_stairs;iron_block" completion="100%">
 
-<destroyables name="West Monument" materials="beacon;quartz_block;step:5;step:7;quartz_stairs;iron_block" completion="100%">
-    <destroyable owner="Sunshine">
-       <cuboid min="86,52,-686" max="82,56,-682"/>
-    </destroyable>
-</destroyables>
+        <destroyable owner="Sunshine">
+           <cuboid min="82,52,-640" max="86,56,-636"/>
+        </destroyable>
 
-<!-- Moonrise Monument -->
-<destroyables name="East Monument" materials="beacon;quartz_block;step:5;step:7;quartz_stairs;iron_block" completion="100%">
-    <destroyable owner="Moonrise">
-       <cuboid min="152,52,-682" max="156,56,-686"/>
-    </destroyable>
-</destroyables>
+        <destroyable owner="Moonrise">
+           <cuboid min="152,52,-682" max="156,56,-686"/>
+        </destroyable>
 
-<destroyables name="West Monument" materials="beacon;quartz_block;step:5;step:7;quartz_stairs;iron_block" completion="100%">
-    <destroyable owner="Moonrise">	
-	   <cuboid min="156,52,-640" max="152,56,-636"/>
-    </destroyable>
-</destroyables>
+    </destroyables>
 
-<regions>
-        <!-- Currently Broken -->
+    <destroyables name="West Monument" materials="beacon;quartz_block;step:5;step:7;quartz_stairs;iron_block" completion="100%">
+        <destroyable owner="Sunshine">
+           <cuboid min="86,52,-686" max="82,56,-682"/>
+        </destroyable>
 
-        <!-- JumpPad 1 -->
-        <apply velocity="@0.2,1.8,0">
-            <cuboid min="119,72,-670" max="121,73,-672"/>
-        </apply>
-      
-        <!-- JumpPad 2 -->
-        <apply velocity="@0.2,8.0,0">
-            <cuboid min="117,72,-650" max="119,73,-652"/>
-        </apply>
+        <destroyable owner="Moonrise">   
+           <cuboid min="156,52,-640" max="152,56,-636"/>
+        </destroyable>
 
-        <!-- Spawn Moonrise -->
-        <apply enter="only-moonrise" message="It's not your Spawn !">
-            <rectangle min="146,-650" max="186,-672" />
-        </apply>
+    </destroyables>
 
-        <!-- Spawn Sunshine -->
-        <apply enter="only-sunshine" message="It's not your Spawn !">
-            <rectangle min="52,-650" max="92,-672" />
-        </apply>
+    <destroyables name="Top Monument" materials="beacon;quartz_block;step:5;step:7;quartz_stairs;iron_block" completion="100%">
 
-        <apply block="deny-all" >
-            <rectangle min="52,-650" max="92,-672" />
-            <rectangle min="146,-650" max="186,-672" />
-        </apply>
-</regions>
+        <destroyable owner="Sunshine">
+            <cuboid min="121,89,-638" max="117,93,-634" />
+        </destroyable>
 
+        <destroyable owner="Moonrise">
+            <cuboid min="117,89,-684" max="121,93,-688" />
+        </destroyable>
 
-<teams>
-   <team color="dark red" max="12" max-overfill="30">Sunshine</team>
-   <team color="blue" max="12" max-overfill="30">Moonrise</team>
-</teams>
+    </destroyables>
 
-<kits>
-    <kit name="spawn">
-        <item slot="0">stone sword</item>
-		<item slot="1">bow</item>
-        <item slot="28" amount="32">arrow</item>
-		<item slot="2">diamond pickaxe</item>
-        <item slot="3" amount="32">baked potato</item>
-		<item slot="4" amount="32">wood</item>
-		<item slot="8" amount="32">arrows</item>
-        <potion duration="5" amplifier="5">heal</potion>
-		<potion duration="5" amplifier="1">INCREASE_DAMAGE</potion>
-    </kit>
-    <kit name="Sunshine" parents="spawn">
-        <chestplate color="aa320a"  enchantment="protection projectile:2">leather chestplate</chestplate>
-		<leggings color="aa320a" damage="-3000">leather leggings</leggings>
-		<boots color="aa320a" enchantment="protection fall:2" lore="McFly" >leather boots</boots>
-		
-    </kit>
-    <kit name="Moonrise" parents="spawn">
-        <chestplate color="31748f" enchantment="protection projectile:2">leather chestplate</chestplate>
-		<leggings color="31748f" damage="-3000">leather leggings</leggings>
-		<boots color="31748f" enchantment="protection fall:2" lore="McFly">leather boots</boots>
-    </kit>
-</kits>
+    <!-- REGIONS & FILTERS -->
 
-<toolrepair>
-    <tool>iron sword</tool>
-    <tool>bow</tool>
-	<tool>diamond pickaxe</tool>
-</toolrepair>
+    <regions>
+            <!-- Currently Broken -->
 
-<itemremove>
-    <item>arrow</item>
-    <item>baked potato</item>
-    <item>leather leggings</item>
-    <item>leather chestplate</item>
-	<item>leather boots</item>
-</itemremove>
+            <!-- JumpPad 1 
+            <apply velocity="@0.2,1.8,0">
+                <cuboid min="119,72,-670" max="121,73,-672"/>
+            </apply>
+           -->
+            <!-- JumpPad 2 
+            <apply velocity="@0.2,8.0,0">
+                <cuboid min="117,72,-650" max="119,73,-652"/>
+            </apply>
+    -->
+            <!-- Spawn Moonrise -->
+            <apply enter="only-moonrise" message="Please, Do not enter in the enemy's spawn !">
+                <cylinder base="162,10,-661" radius="11" height="100" />
+                <rectangle min="186,-655" max="171,-667" />
+            </apply>
 
-<killreward>
-    <item amount="1">golden apple</item>
-</killreward>
+            <!-- Spawn Sunshine -->
+            <apply enter="only-sunshine" message="Please, Do not enter in the enemy's spawn !">
+                <cylinder base="72,10,-661" radius="11" height="100" /> 
+                <rectangle min="67,-667" max="52,-655" />
+            </apply>
 
-<timelock>on</timelock>
-<maxbuildheight>96</maxbuildheight>
-<friendlyfirerefund>off</friendlyfirerefund>
-<difficulty>1</difficulty>
-<hunger>
-    <depletion>off</depletion>
-</hunger>
-<autorespawn time="2s"/>
+            <!-- Can't place blocks -->
+            <apply block="deny-all" message="You can't place blocks here">
+                <cylinder base="72,10,-661" radius="11" height="100" /> 
+                <cylinder base="162,10,-661" radius="11" height="100" /> 
+                <rectangle min="186,-655" max="171,-667" />
+                <rectangle min="67,-667" max="52,-655" />
+                <!-- Portal Top Sunshine -->
+                <cuboid min="97,71,-658" max="91,81,-664" />
+                <!-- Portal Top Moonrise -->
+                <cuboid min="147,80,-658" max="141,70,-664" />
+                <!-- Jumpad 1 -->
+                <cuboid min="118,68,-673" max="122,79,-669" />
+                <cuboid min="119,72,-672" max="121,95,-670" />
+                <!-- Jumpad 2 -->
+                <cuboid min="120,79,-653" max="116,68,-649" />
+                <cuboid min="119,95,-652" max="117,72,-650" />
+            </apply>
+    </regions>
 
-<spawns>
-    <spawn team="Sunshine" kit="Sunshine" yaw="-90">
-        <cuboid min="59,47,-658" max="60,47,-660"/>
-    </spawn>
-    <spawn team="Moonrise" kit="Moonrise" yaw="90">
-        <cuboid min="179,47,-661" max="178,47,-659"/>
-    </spawn>
-    <default yaw="180">
-        <point>119,75,-609</point>
-    </default>
-</spawns>
+    <filters>
+        <filter name="only-sunshine" parents="deny-players">
+            <allow>
+                <team>Sunshine</team>
+            </allow>
+        </filter>
 
-<playable>
-    <cuboid min="51,0,-691" max="187,78,-633"/>
-</playable>
+        <filter name="only-moonrise" parents="deny-players">
+            <allow>
+                <team>Moonrise</team>
+            </allow>
+        </filter>
+    </filters>
 
-<portals>
+    <!-- TEAMS & KITS -->
 
-    <!-- Currently Broken -->
+    <teams>
+       <team color="dark red" max="12" max-overfill="30">Sunshine</team>
+       <team color="blue" max="12" max-overfill="30">Moonrise</team>
+    </teams>
 
-    <!-- Sunshine Portals -->
-    <portal y="10">
-        <cuboid min="76,49,-659" max="76,46,-662" />
-    </portal>
+    <kits>
+        <kit name="spawn">
+            <item slot="0">stone sword</item>
+    		<item slot="1">bow</item>
+            <item slot="28" amount="32">arrow</item>
+    		<item slot="2">diamond pickaxe</item>
+            <item slot="3" amount="32">baked potato</item>
+    		<item slot="4" amount="64">wood</item>
+    		<item slot="8" amount="32">arrows</item>
+            <potion duration="5" amplifier="5">heal</potion>
+    		<potion duration="5" amplifier="1">INCREASE_DAMAGE</potion>
+        </kit>
+        <kit name="Sunshine" parents="spawn">
+            <chestplate color="aa320a"  enchantment="protection projectile:2">leather chestplate</chestplate>
+    		<leggings color="aa320a" damage="-3000">leather leggings</leggings>
+    		<boots color="aa320a" enchantment="protection fall:2" lore="McFly" >leather boots</boots>
+    		
+        </kit>
+        <kit name="Moonrise" parents="spawn">
+            <chestplate color="31748f" enchantment="protection projectile:2">leather chestplate</chestplate>
+    		<leggings color="31748f" damage="-3000">leather leggings</leggings>
+    		<boots color="31748f" enchantment="protection fall:2" lore="McFly">leather boots</boots>
+        </kit>
+    </kits>
 
-    <portal x="@75" y="@47" z="@-661" yaw="90" filter="only-sunshine">
-        <cuboid min="93,77,-663" max="93,75,-659" />
-    </portal>
-    <!-- Moonrise Portals -->
-    <portal x="@144" y="@75" z="@-661" yaw="90" filter="only-moonrise">
-        <cuboid min="162,47,-659" max="162,49,-663"/>
-    </portal>
+    <portals>
 
-    <portal x="@163" y="@47" z="@-661" yaw="-90" filter="only-moonrise">
-        <cuboid min="145,77,-659" max="145,75,-663"/>
-    </portal>
+        <!-- Sunshine Portals -->
+        <portal x="@94" y="@75" z="@-661" filter="only-sunshine">
+            <cuboid min="76,49,-659" max="76,46,-662" />
+        </portal>
 
-</portals>
+        <portal x="@75" y="@47" z="@-661" yaw="90" filter="only-sunshine">
+            <cuboid min="93,77,-663" max="93,75,-659" />
+        </portal>
+        <!-- Moonrise Portals -->
+        <portal x="@144" y="@75" z="@-661" yaw="90" filter="only-moonrise">
+            <cuboid min="162,47,-659" max="162,49,-663"/>
+        </portal>
 
-<filters>
-    <filter name="only-sunshine" parents="deny-players">
-        <allow>
-            <team>Sunshine</team>
-        </allow>
-    </filter>
+        <portal x="@163" y="@47" z="@-661" yaw="-90" filter="only-moonrise">
+            <cuboid min="145,77,-659" max="145,75,-663"/>
+        </portal>
 
-    <filter name="only-moonrise" parents="deny-players">
-        <allow>
-            <team>Moonrise</team>
-        </allow>
-    </filter>
+    </portals>
 
-</filters>
+    <spawns>
+        <spawn team="Sunshine" kit="Sunshine" yaw="-90">
+            <cuboid min="59,47,-658" max="60,47,-660"/>
+        </spawn>
+        <spawn team="Moonrise" kit="Moonrise" yaw="90">
+            <cuboid min="179,47,-661" max="178,47,-659"/>
+        </spawn>
+        <default yaw="180">
+            <point>119,75,-609</point>
+        </default>
+    </spawns>
+
+    <!-- MISCELLANEOUS -->
+
+    <toolrepair>
+        <tool>iron sword</tool>
+        <tool>bow</tool>
+    	<tool>diamond pickaxe</tool>
+    </toolrepair>
+
+    <itemremove>
+        <item>arrow</item>
+        <item>baked potato</item>
+        <item>leather leggings</item>
+        <item>leather chestplate</item>
+    	<item>leather boots</item>
+    </itemremove>
+
+    <killreward>
+        <item amount="1">golden apple</item>
+    </killreward>
+
+    <timelock>on</timelock>
+
+    <maxbuildheight>96</maxbuildheight>
+
+    <friendlyfirerefund>off</friendlyfirerefund>
+
+    <difficulty>1</difficulty>
+
+    <hunger>
+        <depletion>off</depletion>
+    </hunger>
+
+    <autorespawn time="2s"/>
+
+    <playable>
+        <cuboid min="51,0,-691" max="187,96,-631"/>
+    </playable>
 
 </map>
