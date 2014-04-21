@@ -180,7 +180,7 @@
     <!-- MISCELLANEOUS -->
 
     <toolrepair>
-        <tool>iron sword</tool>
+        <tool>stone sword</tool>
         <tool>bow</tool>
     	<tool>diamond pickaxe</tool>
     </toolrepair>
@@ -214,5 +214,5 @@
     <playable>
         <cuboid min="51,0,-691" max="187,96,-631"/>
     </playable>
-
+	<!-- THE END -->
 </map>
